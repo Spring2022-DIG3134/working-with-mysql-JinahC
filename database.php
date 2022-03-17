@@ -38,7 +38,8 @@
         if($connection != null) {
             // Get the results of a query using the connection
             // TODO: Write SQL SELECT statement to read first name, last name, city, and state.
-            $results = mysqli_query($connection, "TODO");
+            $results = mysqli_query($connection, "SELECT first_name, last_name, city, state FROM sales.customers");
+
 
             // Start the HTML table.
             echo("<table><tbody>");
@@ -50,7 +51,11 @@
 
                 // TODO: for each key, add a column entry in HTML using echo().
                 // Reminder: HTML tables use <td> (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#examples).
-                
+                echo("<td>". $row["first_name"] ."</td>");
+                echo("<td>". $row["last_name"] ."</td>");
+                echo("<td>". $row["city"] ."</td>");
+                echo("<td>". $row["state"] ."</td>");
+
                 // End the row.
                 echo("</tr>");
             }
